@@ -1,8 +1,6 @@
 package com.rivals.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,16 +33,16 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		show(request, response);
 	}
 	
 	private void show(HttpServletRequest request, HttpServletResponse response){
-		response.setContentType("text/html");
 		try {
-			PrintWriter out = response.getWriter();
-			out.println("<html><head><title>Hello World!</title></head>");
-			out.println("<body><h1>Hello World!</h1></body></html>");
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
