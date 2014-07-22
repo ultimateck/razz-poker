@@ -1,8 +1,8 @@
 package com.rivals.pokerengine;
 
 public class Card {
-	 private String face;
-	 private String suit;
+	 private Faces face;
+	 private Suits suit;
 	 private int uval;
 	 
 	 public Card(){
@@ -10,16 +10,16 @@ public class Card {
 		 this.suit = null;
 	 }
 	 
-	 public Card(String face, String suit){
+	 public Card(Faces face, Suits suit){
 		 this.face = face;
 		 this.suit = suit;
 	 }
 
-	public String getFace() {
+	public Faces getFace() {
 		return face;
 	}
 
-	public String getSuit() {
+	public Suits getSuit() {
 		return suit;
 	}
 
@@ -27,11 +27,11 @@ public class Card {
 		return uval;
 	}
 
-	public void setFace(String face) {
+	public void setFace(Faces face) {
 		this.face = face;
 	}
 
-	public void setSuit(String suit) {
+	public void setSuit(Suits suit) {
 		this.suit = suit;
 	}
 
