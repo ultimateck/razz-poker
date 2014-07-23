@@ -7,6 +7,7 @@
 <title>Home</title>
 </head>
 <body>
+<jsp:include page="content/Head.jsp"></jsp:include>
 <p>Hello World Test !</p>
 <p>Servlet to JSP Dispatcher</p>
 </body>

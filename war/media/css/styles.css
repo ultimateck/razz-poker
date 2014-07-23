@@ -4,8 +4,61 @@
 .header {
     position: relative;
     z-index: 10000;
-    background-color: rgb(38, 59, 174);
+    background-color: rgb(138, 184, 0);
     width: 100%;
     height: 58px;
     min-width: 1000px;
+}
+
+.header img {
+	height: 50px;
+    padding: 4px;
+    float: left;
+}
+
+.logo span {
+	font-size: 3em;
+	font-family: Georgia,sans-serif;
+	font-style:italic;
+	color: rgb(255, 255, 255);
+	padding: 5px;
+	float: left;
+}
+
+.headmenu {
+    float: right;
+    font-family: arial,sans-serif;
+    position: relative;
+    z-index: 10000;
+}
+
+.headmenu ul {margin: 0px;}
+
+.headmenu li {
+    float: left;
+    position: relative;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.headmenu li a {
+    position: relative;
+    line-height: 16px;
+    padding: 3px 11px;
+    font-size: 16px;
+    display: block;
+    border: 1px solid rgb(138, 184, 0);
+    color: rgb(255, 255, 255);
+}
+/* Common */
+
+.wrap {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
 }

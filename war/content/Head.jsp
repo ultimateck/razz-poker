@@ -13,6 +13,9 @@
 				<span>Razz Poker</span>
 			</div>
 			<div class="headmenu">
+				<ul>
+					<li><a href="">Home</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
