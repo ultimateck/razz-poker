@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+/* Head Styles */
+.header {
+    position: relative;
+    z-index: 10000;
+    background-color: rgb(38, 59, 174);
+    width: 100%;
+    height: 58px;
+    min-width: 1000px;
+}
