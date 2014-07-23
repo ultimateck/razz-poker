@@ -1,5 +1,7 @@
 package com.rivals.razzpoker;
 
-public class RazzPokerRules {
+import com.rivals.pokerengine.PokerRules;
+
+public class RazzPokerRules implements PokerRules{
 
 }
