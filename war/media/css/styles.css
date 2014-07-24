@@ -38,19 +38,36 @@
     float: left;
     position: relative;
     list-style-type: none;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 5px;
+}
+
+.headmenu li span {
+	margin: 2px auto;
+    position: relative;
+    width:24px; 
+    height:24px;
+    display: block;
+    background-size:cover
 }
 
 .headmenu li a {
     position: relative;
-    line-height: 16px;
-    padding: 3px 11px;
+    line-height: 14px;
+    padding: 2px 11px;
     font-size: 16px;
     display: block;
     border: 1px solid rgb(138, 184, 0);
     color: rgb(255, 255, 255);
 }
+
+/* icon-white */
+
+.icon-home-w {background:url(../images/ic/icon-home-white.png) center; }
+.icon-poker-w {background:url(../images/ic/icon-poker-white.png) center; }
+.icon-help-w {background:url(../images/ic/icon-help-white.png) center; }
+.icon-about-w {background:url(../images/ic/icon-about-white.png) center; }
+.icon-login-w {background:url(../images/ic/icon-login-white.png) center; }
 /* Common */
 
 .wrap {
@@ -62,3 +79,30 @@ a {
     text-decoration: none;
     color: rgb(51, 51, 51);
 }
+
+.space {
+    display: inline-block;
+    min-height: 150px;
+    min-width: 1000px;
+    width: 100%;
+}
+
+.body {
+    min-width: 1000px;
+    width: 100%;
+}
+
+.btn-top-container {
+	padding: 5px;
+}
+
+.btn-top{
+	margin-left: 5px;
+	height: 100px;
+	width: 230px;
+	padding: 5px;
+	float: left;
+}
+
+.color-green{background-color: green;}
+.color-gray{background-color: gray;}

@@ -14,7 +14,11 @@
 			</div>
 			<div class="headmenu">
 				<ul>
-					<li><a href="">Home</a></li>
+					<li><a href=""><span class="icon-home-w"></span>Home</a></li>
+					<li><a href=""><span class="icon-poker-w"></span>Poker Rooms</a></li>
+					<li><a href=""><span class="icon-help-w"></span>Help</a></li>
+					<li><a href=""><span class="icon-about-w"></span>About</a></li>
+					<li><a href=""><span class="icon-login-w"></span>Login</a></li>
 				</ul>
 			</div>
 		</div>

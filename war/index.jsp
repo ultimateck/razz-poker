@@ -8,7 +8,21 @@
 </head>
 <body>
 <jsp:include page="content/Head.jsp"></jsp:include>
-<p>Hello World Test !</p>
-<p>Servlet to JSP Dispatcher</p>
+<div class="space"></div>
+
+<div class="body">
+	<div class="wrap">
+		<div class="content">
+			<div class="btn-top-container">
+			<div class="btn-top color-green"></div>
+			<div class="btn-top color-gray"></div>
+			<div class="btn-top color-green"></div>
+			<div class="btn-top color-gray"></div>
+			</div>
+			<p>Hello World Test !</p>
+			<p>Servlet to JSP Dispatcher</p>
+		</div>
+	</div>
+</div>
 </body>
 </html>
