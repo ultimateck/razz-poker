@@ -9,6 +9,7 @@
 <body>
 <jsp:include page="content/Head.jsp"></jsp:include>
 <div class="space"></div>
+<jsp:include page="content/Banner.jsp"></jsp:include>
 
 <div class="body">
 	<div class="wrap">

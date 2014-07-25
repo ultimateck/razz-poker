@@ -68,6 +68,14 @@
 .icon-help-w {background:url(../images/ic/icon-help-white.png) center; }
 .icon-about-w {background:url(../images/ic/icon-about-white.png) center; }
 .icon-login-w {background:url(../images/ic/icon-login-white.png) center; }
+
+
+.space {display: inline-block; min-height: 150px; min-width: 1000px; width: 100%;}
+.banner { position:absolute; left:0; right:0; top:58px; bottom:0; width:100%; 
+	z-index: -1;  min-width: 1000px; overflow: hidden; height: 550px; }
+.banner .banner-bottom{ z-index: 8; width: 100%; height: 100px; position: absolute; 
+	bottom: 0;  background: url('../images/banner-bottom.png') repeat-x bottom left; }
+
 /* Common */
 
 .wrap {
@@ -80,16 +88,15 @@ a {
     color: rgb(51, 51, 51);
 }
 
-.space {
-    display: inline-block;
-    min-height: 150px;
+.body {
     min-width: 1000px;
     width: 100%;
 }
 
-.body {
-    min-width: 1000px;
-    width: 100%;
+.body .wrap {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid white;
+    padding: 0;
 }
 
 .btn-top-container {
@@ -104,5 +111,5 @@ a {
 	float: left;
 }
 
-.color-green{background-color: green;}
+.color-green{background-color: rgb(138, 184, 0);}
 .color-gray{background-color: gray;}
