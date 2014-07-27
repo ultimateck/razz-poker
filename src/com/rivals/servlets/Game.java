@@ -43,16 +43,19 @@ public class Game extends HttpServlet {
 	
 	private void doExecute(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession();
-		if(!session.isNew()){session.invalidate();}
+		String out = null;
+		if(!session.isNew()){session.invalidate(); out = "Your Session Over";}
 		else{
 			Utility.users +=1;
-		    UserSession us = new UserSession(Utility.users + 1, 0, "Guest #" + (Utility.users + 1));
+		    UserSession us = new UserSession(Utility.users + 1, 0, "Guest lol#" + (Utility.users + 1));
+		    session = request.getSession();
 		    session.setAttribute("us", us);
+		    out = ((UserSession)session.getAttribute("us")).getUserName();
 		}
 		
 		response.setContentType("text/html");
 		try {
-			response.getWriter().print(((UserSession)session.getAttribute("us")).getUserName());
+			response.getWriter().print(out);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

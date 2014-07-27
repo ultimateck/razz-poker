@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="media/css/styles.css" type="text/css" />
 <div class="header">
 	<div class="wrap">
-		<div class="content">
+		<div class="hcontent">
 			<div class="logo">
 				<img src="media/images/logo.png"></img>
 				<span>Razz Poker</span>
