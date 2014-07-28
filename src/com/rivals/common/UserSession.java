@@ -1,9 +1,13 @@
 package com.rivals.common;
 
+import com.rivals.razzpoker.RazzTable;
+
 public class UserSession {
 	private int tableId;
 	private int playerId;
 	private String userName;
+	public RazzTable table;
+	public boolean isTableCreator = false;
 	
 	public UserSession() {
 		
