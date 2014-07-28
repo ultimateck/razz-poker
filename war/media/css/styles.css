@@ -102,16 +102,16 @@ a {
 .content {display:table; padding: 5px;}
 
 .btn-top-container {
-	padding: 5px;
+	padding: 5px; display: table;
 }
 
 .btn-top-container div {cursor: pointer;}
 
-.btn-top-container div:HOVER {opacity: 0.6;}
+.btn-top-container div:HOVER {opacity: 0.8;}
 
 .btn-top{
 	margin-right: 5px;
-	height: 100px;
+	height: 75px;
 	width: 230px;
 	padding: 5px;
 	float: left;
@@ -122,7 +122,16 @@ a {
 
 
 /* Game */
-.game-container {padding: 5px; width: 100%; min-height: 200px;}
+.game-container {padding: 5px; width: 100%; min-height: 200px; margin-top: 10px;}
 .game {width: 100%;}
-.cell {min-width: 230px; min-height: 20px; padding: 5px; border: 1px solid white; float: left;}
+.game-intro {background-color: rgba(0, 0, 0, 0.4); text-align: center; color: white;
+	width: 970px; min-height: 300px; float: left;}
+.cell {min-width: 310px; min-height: 100px; padding: 5px; border: 1px solid white; float: left;}
+.row {width: 100%; display: table-row;}
 .row0 div {background-color: yellow; }
+.row1 div {background-color: green; min-height: 310px; min-width: 110px;}
+.row1 .col1 {min-width: 710px;}
+.row2 div {background-color: purple;}
+
+.game-controller {min-height: 150px; min-width: 930px; margin-right:25px; margin-top: 5px;
+	background-color: gray;}

@@ -27,6 +27,15 @@
     <url-pattern>/game</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.rivals.servlets.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
   <error-page>
     <error-code>404</error-code>
     <location>/home</location>
