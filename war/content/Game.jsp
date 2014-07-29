@@ -19,10 +19,19 @@
 			s += "<div class=\"row"+ i +" row\">";
 			for(int j = 0; j < 3; j++){
 				s += "<div class=\"col"+ j +" cell\">";
-				if(!(i==1 && (j==1 || j==2)))
+				if(c == us.table.getPlayers().indexOf(us.player)){
+					s += Utility.getPlayerDetails(us.table, c+1);
+					c+=2;
+					} 
+				else if(i==2 && j==1){
+					s += Utility.getPlayerDetails(us.table, us.table.getPlayers().indexOf(us.player));
+				}
+				else if(!(i==1 && (j==1 || j==2)) && !(i==2 && j==1)){
 					s += Utility.getPlayerDetails(us.table, c);
+					c++;
+				}
 				s += "</div>";
-				c++;
+				
 			}
 			s += "</div>";
 		}
@@ -60,12 +69,12 @@
 <div class="game-control-tools">
 <% if(us.isTableCreator){ %>
 <button>Start Game</button>
-<button>Add Bot</button>
+<button id="bot" onclick="Add_Bot()">Add Bot</button>
 <% } %>
 <input type="text"><button>Bet</button>
 </div>
 	<div class="game-control-status">
-		<datalist></datalist>
+		<textarea rows="6" cols="50" disabled></textarea>
 	</div>
 </div>
 </div>

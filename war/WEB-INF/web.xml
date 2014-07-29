@@ -17,7 +17,6 @@
     <servlet-name>Home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Game</servlet-name>
     <servlet-class>com.rivals.servlets.Game</servlet-class>
@@ -26,7 +25,6 @@
     <servlet-name>Game</servlet-name>
     <url-pattern>/game</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>com.rivals.servlets.Logout</servlet-class>
@@ -35,7 +33,6 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
-  
   <error-page>
     <error-code>404</error-code>
     <location>/home</location>

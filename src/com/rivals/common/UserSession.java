@@ -1,5 +1,6 @@
 package com.rivals.common;
 
+import com.rivals.pokerengine.Player;
 import com.rivals.razzpoker.RazzTable;
 
 public class UserSession {
@@ -8,6 +9,7 @@ public class UserSession {
 	private String userName;
 	public RazzTable table;
 	public boolean isTableCreator = false;
+	public Player player;
 	
 	public UserSession() {
 		

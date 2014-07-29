@@ -6,6 +6,8 @@ public class Player {
 	private int id;
 	private String nickName;
 	private List<Card> hand;
+	public boolean isBot = false;
+	public double cash = 50.00;
 	
 	public Player(){
 		hand = new ArrayList<Card>();

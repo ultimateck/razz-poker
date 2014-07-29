@@ -9,6 +9,7 @@ public class Utility {
 	public static final int MAX_TABLES = 10;
 	public static List<RazzTable> razzTables = new ArrayList<RazzTable>();
 	public static int users = 0;
+	public static int bots = 0;
 	
 	public static int addTable(RazzTable rt){
 		razzTables.add(rt);
@@ -19,7 +20,7 @@ public class Utility {
 		String out = null;
 		try{
 			Player p = rt.getPlayers().get(index);
-			out = "<div class\"player\"><p>"+ p.getNickName() +"</p></div>";
+			out = "<div class=\"player player"+ index +"\"><p>"+ p.getNickName() +" <span> Cash: " + p.cash +"</span></p></div>";
 		}catch(Exception ex){
 			out = "<p>Empty</p>";
 		}

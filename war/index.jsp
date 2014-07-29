@@ -12,7 +12,7 @@
 <script type="text/javascript">
 function Load_Content()
 {
-	$(".game").load("content/Game.jsp #game-body").hide().fadeIn(3000);
+	//$(".game").load("content/Game.jsp #game-body");
     $("#ghead").load("content/Game.jsp #game-control-head").hide().fadeIn(3000);
 }
 setInterval('Load_Content()', 10000);
@@ -30,6 +30,22 @@ function Select_Table(id){
 			 $().toastmessage('showErrorToast', thrownError);
 		 }
 	});
+}
+function Add_Bot(){
+        $.ajax({
+            type : "get",
+            url : "game?bot=true",
+
+            success : function(responseText) {
+
+                $(".game-container").load("content/Game.jsp");
+                $().toastmessage('showSuccessToast', responseText);
+            },
+            error : function(xhr, ajaxOptions, thrownError) {
+            	$().toastmessage('showErrorToast', thrownError);
+            }
+
+        });
 }
 </script>
 <script>
@@ -73,7 +89,7 @@ $(document).ready(function() {
 
         });
     });
-
+    
     
     $.fn.scrollView = function () {
         return this.each(function () {

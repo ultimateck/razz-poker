@@ -10,10 +10,12 @@ public class RazzTable implements PokerTable {
 	private Deck deck;
 	private List<Player> players;
 	public String status = "";
+	public List<String> statusList;
 	
 	public RazzTable(){
 		deck = new Deck();
 		players = new ArrayList<Player>();
+		statusList = new ArrayList<String>();
 	}
 		
 	/**
@@ -38,7 +40,7 @@ public class RazzTable implements PokerTable {
 
 	@Override
 	public void deal() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -49,6 +51,12 @@ public class RazzTable implements PokerTable {
 	
 	public int getNoOfPlayers(){
 		return players.size();
+	}
+	
+	public void Start(){
+		statusList.add("Game Started");
+		shuffel();
+		statusList.add("Deck Shuffeled !");
 	}
 
 }
