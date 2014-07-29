@@ -84,6 +84,7 @@ public class Game extends HttpServlet {
 			else if(Utility.razzTables.size() <= Utility.MAX_TABLES ){
 				RazzTable rt = new RazzTable();
 				Player p = new Player();
+				p.setNickName(us.getUserName());
 				int pid = rt.addPlayer(p);
 				int tid = Utility.addTable(rt);
 				
@@ -102,12 +103,37 @@ public class Game extends HttpServlet {
 			session.setAttribute("showList", true);
 		}
 		
+		else if(request.getParameter("mode").equals("exit")){
+			session.setAttribute("showList", false);
+			UserSession us = (UserSession) session.getAttribute("us");
+			if(us.table == null){out += "<br>You have no ongoing game to exit";}
+		}
+		
 		print(response, out);
 	}
 	
 	private void doJoin(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession();
+		UserSession us = (UserSession) session.getAttribute("us");
 		int tid = Integer.parseInt(request.getParameter("table"));
+		String out = null;
 		
+		RazzTable rt = Utility.razzTables.get(tid);
+		if(rt.getNoOfPlayers() < 8){
+			Player p = new Player();
+			p.setNickName(us.getUserName());
+			int pid = rt.addPlayer(p);
+			us.isTableCreator = false;
+			us.table = rt;
+			us.setPlayerId(pid);
+			us.setTableId(tid);
+			out = us.getUserName() + "<br>You have successfully joined Table#" + tid;
+		}
+		else{
+			out = us.getUserName() + "<br>Table#"+tid +" is full, Please Join Another Table";
+		}
+		
+		print(response, out);
 	}
 	
 	private void doBot(HttpServletRequest request, HttpServletResponse response){

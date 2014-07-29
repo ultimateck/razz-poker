@@ -126,12 +126,15 @@ a {
 .game {width: 100%;}
 .game-intro {background-color: rgba(0, 0, 0, 0.4); text-align: center; color: white;
 	width: 970px; min-height: 300px; float: left;}
-.cell {min-width: 310px; min-height: 100px; padding: 5px; border: 1px solid white; float: left;}
+.cell {min-width: 310px; min-height: 100px; padding: 5px; border: 1px solid white; float: left; 
+	border-radius: 10px; opacity:0.8;}
 .row {width: 100%; display: table-row;}
 .row0 div {background-color: yellow; }
 .row1 div {background-color: green; min-height: 310px; min-width: 110px;}
 .row1 .col1 {min-width: 710px;}
+.row2 .col1 {background-color: rgb(138, 184, 0);}
 .row2 div {background-color: purple;}
 
 .game-controller {min-height: 150px; min-width: 930px; margin-right:25px; margin-top: 5px;
 	background-color: gray;}
+.game-control-head {min-height: 25px; width: 100%; background-color: blue;}

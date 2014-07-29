@@ -12,7 +12,8 @@
 <script type="text/javascript">
 function Load_Content()
 {
-      $(".game-controller").load("content/Game.jsp #game-controller").hide().fadeIn(3000);
+	$(".game").load("content/Game.jsp #game-body").hide().fadeIn(3000);
+    $("#ghead").load("content/Game.jsp #game-control-head").hide().fadeIn(3000);
 }
 setInterval('Load_Content()', 10000);
 function Select_Table(id){
@@ -96,8 +97,8 @@ $(document).ready(function() {
 			<div class="btn-top-container">
 			<div id ="new" class="btn-top color-green"><p id="demo">New</p></div>
 			<div id="join" class="btn-top color-gray"><p>Join</p></div>
-			<div class="btn-top color-green"></div>
-			<div class="btn-top color-gray"></div>
+			<div class="btn-top color-green"><p>Exit</p></div>
+			<div class="btn-top color-gray"><p>More</p></div>
 			</div>
 			
 			<div class="game-container">

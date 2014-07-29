@@ -15,8 +15,22 @@ public class RazzTable implements PokerTable {
 		deck = new Deck();
 		players = new ArrayList<Player>();
 	}
-	
-	
+		
+	/**
+	 * @return the players
+	 */
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	/**
+	 * @param players the players to set
+	 */
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
+
+
 	public int addPlayer(Player p){
 		players.add(p);
 		return players.lastIndexOf(p);
@@ -31,6 +45,10 @@ public class RazzTable implements PokerTable {
 	@Override
 	public void shuffel() {
 		deck.shuffleDeck();
+	}
+	
+	public int getNoOfPlayers(){
+		return players.size();
 	}
 
 }

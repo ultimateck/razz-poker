@@ -10,13 +10,19 @@
 <link rel="stylesheet" href="media/css/styles.css" type="text/css" />
 
 <div class="game">
+<div id="game-body">
 <%  String s = "";
 	UserSession us = (UserSession)session.getAttribute("us");
 	if(us != null && us.table != null){
+		int c = 0;
 		for(int i = 0; i < 3; i++){
 			s += "<div class=\"row"+ i +" row\">";
 			for(int j = 0; j < 3; j++){
-				s += "<div class=\"col"+ j +" cell\"></div>";
+				s += "<div class=\"col"+ j +" cell\">";
+				if(!(i==1 && (j==1 || j==2)))
+					s += Utility.getPlayerDetails(us.table, c);
+				s += "</div>";
+				c++;
 			}
 			s += "</div>";
 		}
@@ -28,7 +34,7 @@
 		if(us != null && test){
 			s = "<div class=\"game-list\"><ul><p>List of availabe Tables</p>";
 			for(RazzTable rt : Utility.razzTables){
-				s+= "<li><a href=\"javascript:\">Table#" + Utility.razzTables.indexOf(rt) + "</a></li>";
+				s+= "<li><a href=\"javascript:Select_Table("+ Utility.razzTables.indexOf(rt) +")\">Table#" + Utility.razzTables.indexOf(rt) + "</a></li>";
 			}
 			s += "<ul></div>";
 		}
@@ -41,13 +47,21 @@
 	
 <%= s %>
 </div>
+</div>
 <% if(us != null && us.table != null){ %>
 <div id="game-controller" class="game-controller">
-<div class="game-control-head"></div>
+<div id="ghead">
+<div id="game-control-head" class="game-control-head">
+	<% s = us.getUserName() + " - " + "Table#"+ us.getTableId() + " Player#"+ (us.getPlayerId()+1)+"/" + us.table.getNoOfPlayers(); %>
+	<%= s %>
+</div>
+</div>
 <div class="game-control-body">
 <div class="game-control-tools">
+<% if(us.isTableCreator){ %>
 <button>Start Game</button>
 <button>Add Bot</button>
+<% } %>
 <input type="text"><button>Bet</button>
 </div>
 	<div class="game-control-status">
