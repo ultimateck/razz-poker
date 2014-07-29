@@ -68,7 +68,7 @@
 <div class="game-control-body">
 <div class="game-control-tools">
 <% if(us.isTableCreator){ %>
-<button>Start Game</button>
+<button id="start" onclick="Start()">Start Game</button>
 <button id="bot" onclick="Add_Bot()">Add Bot</button>
 <% } %>
 <input type="text"><button>Bet</button>

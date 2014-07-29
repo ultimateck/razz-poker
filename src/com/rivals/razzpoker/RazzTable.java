@@ -54,6 +54,7 @@ public class RazzTable implements PokerTable {
 	}
 	
 	public void Start(){
+		status = "started";
 		statusList.add("Game Started");
 		shuffel();
 		statusList.add("Deck Shuffeled !");

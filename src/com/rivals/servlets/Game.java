@@ -120,6 +120,10 @@ public class Game extends HttpServlet {
 		UserSession us = (UserSession) session.getAttribute("us");
 		int tid = Integer.parseInt(request.getParameter("table"));
 		String out = null;
+		if(Utility.razzTables.get(tid).status.equals("started")){
+			print(response, "Game Already Started,<br> You Can't  Join");
+			return;
+		}
 		
 		RazzTable rt = Utility.razzTables.get(tid);
 		if(rt.getNoOfPlayers() < 7){
@@ -145,6 +149,10 @@ public class Game extends HttpServlet {
 		UserSession us = (UserSession) session.getAttribute("us");
 		int tid = Utility.razzTables.indexOf(us.table);
 		String out = null;
+		if(us.table.status.equals("started")){
+			print(response, "Game Already Started,<br> You Can't add Bot");
+			return;
+		}
 		
 		RazzTable rt = Utility.razzTables.get(tid);
 		if(rt.getNoOfPlayers() < 7){
@@ -165,6 +173,8 @@ public class Game extends HttpServlet {
 	private void doStart(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession();
 		UserSession us = (UserSession) session.getAttribute("us");
+		us.table.Start();
+		print(response, "Game Started !");
 	}
 	
 	private void print(HttpServletResponse response, String out){

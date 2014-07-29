@@ -47,6 +47,24 @@ function Add_Bot(){
 
         });
 }
+function Start(){
+    $.ajax({
+        type : "get",
+        url : "game?start=true",
+
+        success : function(responseText) {
+
+            $(".game-container").load("content/Game.jsp");
+            $().toastmessage('showSuccessToast', responseText);
+            $('#start').attr("disabled", true);
+            $('#start').html("Started");
+        },
+        error : function(xhr, ajaxOptions, thrownError) {
+        	$().toastmessage('showErrorToast', thrownError);
+        }
+
+    });
+}
 </script>
 <script>
 $(document).ready(function() {
