@@ -20,9 +20,13 @@ public class Utility {
 		String out = null;
 		try{
 			Player p = rt.getPlayers().get(index);
-			out = "<div class=\"player player"+ index +"\"><p>"+ p.getNickName() +" <span> Cash: " + p.cash +"</span></p></div>";
+			out = "<div class=\"player player"+ index +"\"><p>"+ p.getNickName() +" <span> Cash: " + p.cash +"</span></p>";
+			out += "<div>";
+			if(p.isBot){out += "<img src=\"media/images/players/bot1.png\">";}
+			else{out += "<img src=\"media/images/players/player" + (index + 1)+".png\">";}
+			out += "</div></div>";
 		}catch(Exception ex){
-			out = "<p>Empty</p>";
+			out = "<div class=\"player\"><p>Empty</p></div>";
 		}
 		return out;
 	}

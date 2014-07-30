@@ -69,10 +69,10 @@
 .icon-about-w {background:url(../images/ic/icon-about-white.png) center; }
 .icon-login-w {background:url(../images/ic/icon-login-white.png) center; }
 
-.icon-new-w {background:url(../images/ic/icon-home-white.png) center; }
-.icon-join-w {background:url(../images/ic/icon-poker-white.png) center; }
-.icon-leave-w {background:url(../images/ic/icon-help-white.png) center; }
-.icon-more-w {background:url(../images/ic/icon-about-white.png) center; }
+.icon-new-w {background:url(../images/ic/play-icon.png) center; }
+.icon-join-w {background:url(../images/ic/join-icon.png) center; }
+.icon-leave-w {background:url(../images/ic/exit-icon.png) center; }
+.icon-more-w {background:url(../images/ic/more-icon.png) center; }
 
 
 
@@ -115,14 +115,8 @@ a {
 
 .btn-top-container div:HOVER {opacity: 0.8;}
 
-.btn-top-container span {
-	margin: 2px auto;
-    position: relative;
-    width:24px; 
-    height:24px;
-    display: block;
-    background-size:cover
-}
+.btn-top-container span { margin: 10px auto; position: relative; width:32px; 
+    height:32px; display: block; background-size:cover; color: rgb(255, 255, 255); }
 
 .btn-top{
 	margin-right: 5px;
@@ -144,13 +138,13 @@ a {
 .cell {min-width: 310px; min-height: 100px; padding: 5px; border: 1px solid white; float: left; 
 	border-radius: 10px; opacity:0.8;}
 .row {width: 100%; display: table-row;}
-.row0 div {background-color: yellow; }
-.row1 div {background-color: green; min-height: 310px; min-width: 110px;}
+.row0 .cell {background-color: yellow; }
+.row1 .cell {background-color: green; min-height: 310px; min-width: 110px;}
 .row1 .col1 {min-width: 710px;}
+.row2 .cell {background-color: purple;}
 .row2 .col1 {background-color: rgb(138, 184, 0);}
-.row2 div {background-color: purple;}
-.row1 .col0{max-width: 110px;}
-.row1 .col0 div{min-height: 110px; -webkit-transform: rotate(90deg);
+.row1 .col0{max-width: 110px; overflow: visible;}
+.row1 .col0 .player{min-height: 110px; -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
@@ -158,6 +152,11 @@ a {
 
 .game-controller {min-height: 150px; min-width: 930px; margin-right:25px; margin-top: 5px;
 	background-color: gray;}
-.game-control-head {min-height: 25px; width: 100%; background-color: blue;}
+.game-control-head {min-height: 25px; width: 100%; background-color: #3399FF;}
 .game-control-tools{float: left;}
 .game-control-status{float: right; display:table;}
+
+.player {padding: 5px; background-color: rgba(255,255,255,0.8); height:90px;}
+.player span{color: green; float: right; height:10px;}
+.player div {background-color: rgba(255,255,255,0.8); padding: 5px;}
+.player img {width:32px; height:32px;}

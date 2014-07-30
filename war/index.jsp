@@ -129,10 +129,10 @@ $(document).ready(function() {
 	<div class="wrap">
 		<div class="content">
 			<div class="btn-top-container">
-			<div id ="new" class="btn-top color-green"><span>New</span></div>
-			<div id="join" class="btn-top color-gray"><p>Join</p></div>
-			<div class="btn-top color-green"><p>Exit</p></div>
-			<div class="btn-top color-gray"><p>More</p></div>
+			<div id ="new" class="btn-top color-green"><span class="icon-new-w"></span><span>New</span></div>
+			<div id="join" class="btn-top color-gray"><span class="icon-join-w"></span><span>Join</span></div>
+			<div class="btn-top color-green"><span class="icon-leave-w"></span><span>Leave</span></div>
+			<div class="btn-top color-gray"><span class="icon-more-w"></span><span>More</span></div>
 			</div>
 			
 			<div class="game-container">
