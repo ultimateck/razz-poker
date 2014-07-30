@@ -129,7 +129,7 @@ $(document).ready(function() {
 	<div class="wrap">
 		<div class="content">
 			<div class="btn-top-container">
-			<div id ="new" class="btn-top color-green"><p id="demo">New</p></div>
+			<div id ="new" class="btn-top color-green"><span>New</span></div>
 			<div id="join" class="btn-top color-gray"><p>Join</p></div>
 			<div class="btn-top color-green"><p>Exit</p></div>
 			<div class="btn-top color-gray"><p>More</p></div>
