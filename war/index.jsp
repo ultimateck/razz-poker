@@ -65,6 +65,26 @@ function Start(){
 
     });
 }
+
+function Make_Bet(){
+	alert($("#txtBet").val());
+    $.ajax({
+        type : "get",
+        url : "game?bet=" + $("#txtBet").val(),
+
+        success : function(responseText) {
+
+            $(".game-container").load("content/Game.jsp");
+            $().toastmessage('showSuccessToast', responseText);
+            $("#txtBet").val("");
+        },
+        error : function(xhr, ajaxOptions, thrownError) {
+        	$().toastmessage('showErrorToast', thrownError);
+        }
+
+    });
+}
+
 </script>
 <script>
 $(document).ready(function() {

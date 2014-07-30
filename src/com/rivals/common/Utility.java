@@ -30,5 +30,12 @@ public class Utility {
 		}
 		return out;
 	}
+	
+	public static String getTableStatus(RazzTable rt){
+		String out = null;
+		out = "<div class=\"table-state\">";
+		out += rt.status + "</div>";
+		return out;
+	}
 
 }

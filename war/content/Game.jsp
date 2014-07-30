@@ -30,6 +30,9 @@
 					s += Utility.getPlayerDetails(us.table, c);
 					c++;
 				}
+				else if (i==1 && j==1){
+					s += Utility.getTableStatus(us.table);
+				}
 				s += "</div>";
 				
 			}
@@ -71,7 +74,7 @@
 <button id="start" onclick="Start()">Start Game</button>
 <button id="bot" onclick="Add_Bot()">Add Bot</button>
 <% } %>
-<input type="text"><button>Bet</button>
+<input type="text" id="txtBet"><button id="bet" onclick="Make_Bet()">Bet</button>
 </div>
 	<div class="game-control-status">
 		<textarea rows="6" cols="50" disabled></textarea>

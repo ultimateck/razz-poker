@@ -8,6 +8,7 @@ public class Player {
 	private List<Card> hand;
 	public boolean isBot = false;
 	public double cash = 50.00;
+	public double bet = 0;
 	
 	public Player(){
 		hand = new ArrayList<Card>();

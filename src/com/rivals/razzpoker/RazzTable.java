@@ -9,6 +9,8 @@ public class RazzTable implements PokerTable {
 	
 	private Deck deck;
 	private List<Player> players;
+	public double tableAmount = 0;
+	public boolean isStarted = false;
 	public String status = "";
 	public List<String> statusList;
 	
@@ -54,10 +56,15 @@ public class RazzTable implements PokerTable {
 	}
 	
 	public void Start(){
+		System.out.print("Game Started");
 		status = "started";
+		isStarted = true;
 		statusList.add("Game Started");
 		shuffel();
 		statusList.add("Deck Shuffeled !");
+		
+		RazzPokerRules.Ante(this);
+		System.out.print("Ante Completed");
 	}
 
 }

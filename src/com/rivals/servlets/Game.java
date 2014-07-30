@@ -55,6 +55,8 @@ public class Game extends HttpServlet {
 			break;
 		case "table": doJoin(request, response);
 			break;
+		case "bet": doBet(request, response);
+			break;
 
 
 		default: print(response, "No Params");
@@ -120,7 +122,7 @@ public class Game extends HttpServlet {
 		UserSession us = (UserSession) session.getAttribute("us");
 		int tid = Integer.parseInt(request.getParameter("table"));
 		String out = null;
-		if(Utility.razzTables.get(tid).status.equals("started")){
+		if(Utility.razzTables.get(tid).isStarted){
 			print(response, "Game Already Started,<br> You Can't  Join");
 			return;
 		}
@@ -149,7 +151,7 @@ public class Game extends HttpServlet {
 		UserSession us = (UserSession) session.getAttribute("us");
 		int tid = Utility.razzTables.indexOf(us.table);
 		String out = null;
-		if(us.table.status.equals("started")){
+		if(us.table.isStarted){
 			print(response, "Game Already Started,<br> You Can't add Bot");
 			return;
 		}
@@ -173,8 +175,23 @@ public class Game extends HttpServlet {
 	private void doStart(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession();
 		UserSession us = (UserSession) session.getAttribute("us");
+		if(us.table.isStarted){print(response,"Game Already Started");return;}
 		us.table.Start();
 		print(response, "Game Started !");
+	}
+	
+	private void doBet(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession();
+		UserSession us = (UserSession) session.getAttribute("us");
+		double bet;
+		try{
+			bet = Double.parseDouble(request.getParameter("bet"));
+		}catch(Exception ex){
+			print(response, "Error in Value"); return;
+		}
+		if(!us.table.isStarted){print(response,"Game Already Started");return;}
+		us.player.bet = bet;
+		print(response, "You have successfully Betted !");
 	}
 	
 	private void print(HttpServletResponse response, String out){
