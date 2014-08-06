@@ -7,9 +7,10 @@ public class Deck {
 	private final int TOTAL_CARDS=52;
 	
 	public Deck(){
+		int i = 1;
 		for (Faces face : Faces.values()){
 			for (Suits suit : Suits.values()){
-				Card card = new Card(face, suit);
+				Card card = new Card(face, suit, i++);
 				if(cards.size() <= TOTAL_CARDS) cards.add(card);
 			}
 	    }

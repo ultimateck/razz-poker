@@ -12,10 +12,11 @@
 <script type="text/javascript">
 function Load_Content()
 {
-	//$(".game").load("content/Game.jsp #game-body");
+	$(".game").load("content/Game.jsp #game-body");
     $("#ghead").load("content/Game.jsp #game-control-head").hide().fadeIn(3000);
+    Get_Status();
 }
-setInterval('Load_Content()', 10000);
+setInterval('Load_Content()', 5000);
 function Select_Table(id){
 	$.ajax({
 		type : "get",
@@ -80,6 +81,25 @@ function Make_Bet(){
         },
         error : function(xhr, ajaxOptions, thrownError) {
         	$().toastmessage('showErrorToast', thrownError);
+        }
+
+    });
+}
+
+function Get_Status(){
+    $.ajax({
+        type : "get",
+        url : "game?status=true",
+
+        success : function(responseText) {
+
+            $(".game-container").load("content/Game.jsp");
+            if(responseText != ''){
+            $().toastmessage('showSuccessToast', responseText);}
+        },
+        error : function(xhr, ajaxOptions, thrownError) {
+        	if(thrownError != ''){
+        	$().toastmessage('showErrorToast', thrownError);}
         }
 
     });

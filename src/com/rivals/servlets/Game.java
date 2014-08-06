@@ -57,6 +57,8 @@ public class Game extends HttpServlet {
 			break;
 		case "bet": doBet(request, response);
 			break;
+		case "status": doStatus(request, response);
+		break;
 
 
 		default: print(response, "No Params");
@@ -71,7 +73,7 @@ public class Game extends HttpServlet {
 		String out = null;
 		if(session.isNew() || session.getAttribute("us") == null){
 			Utility.users +=1;
-		    UserSession us = new UserSession(Utility.users + 1, 0, "Guest #" + (Utility.users + 1));
+		    UserSession us = new UserSession(Utility.users, 0, "Guest #" + (Utility.users));
 		    session = request.getSession();
 		    session.setAttribute("us", us);
 		    out = ((UserSession)session.getAttribute("us")).getUserName();
@@ -189,9 +191,18 @@ public class Game extends HttpServlet {
 		}catch(Exception ex){
 			print(response, "Error in Value"); return;
 		}
-		if(!us.table.isStarted){print(response,"Game Already Started");return;}
+		if(!us.table.isStarted){print(response,"Game Not Started Yet");return;}
 		us.player.bet = bet;
 		print(response, "You have successfully Betted !");
+	}
+	
+	private void doStatus(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession();
+		UserSession us = (UserSession) session.getAttribute("us");
+		if(us == null || us.table == null) {print(response,"");return;}
+		if(!us.table.isStarted){print(response,"Game Not Started Yet");return;}
+		us.table.Switch_Actions();
+		print(response, Utility.getPlayerNotifications(us.player));
 	}
 	
 	private void print(HttpServletResponse response, String out){

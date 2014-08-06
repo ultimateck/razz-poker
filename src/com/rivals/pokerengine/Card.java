@@ -14,6 +14,12 @@ public class Card {
 		 this.face = face;
 		 this.suit = suit;
 	 }
+	 
+	 public Card(Faces face, Suits suit, int uval){
+		 this.face = face;
+		 this.suit = suit;
+		 this.uval = uval;
+	 }
 
 	public Faces getFace() {
 		return face;
@@ -45,7 +51,7 @@ public class Card {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return this.face.toString() + "-" + this.suit.toString();
 	}
 	 
 	 

@@ -13,6 +13,10 @@ public class RazzTable implements PokerTable {
 	public boolean isStarted = false;
 	public String status = "";
 	public List<String> statusList;
+	public long actionStart;
+	public long actionLength;
+	public boolean isBet = false;
+	public boolean showFullHand = false;
 	
 	public RazzTable(){
 		deck = new Deck();
@@ -42,7 +46,9 @@ public class RazzTable implements PokerTable {
 
 	@Override
 	public void deal() {
-		
+		for (Player p : players){
+			p.addCardToHand(deck.getCard());
+		}
 		
 	}
 
@@ -56,15 +62,41 @@ public class RazzTable implements PokerTable {
 	}
 	
 	public void Start(){
-		System.out.print("Game Started");
-		status = "started";
+		System.out.println("Game Started");
+		status = "ante";
 		isStarted = true;
 		statusList.add("Game Started");
 		shuffel();
 		statusList.add("Deck Shuffeled !");
-		
+		status = "ante";
 		RazzPokerRules.Ante(this);
-		System.out.print("Ante Completed");
+	}
+	
+	public void Switch_Actions(){
+		switch (status) {
+		case "ante": RazzPokerRules.Ante(this);
+			break;
+		case "thirdstreet": RazzPokerRules.ThirdStreet(this);
+		break;
+		
+		case "fourthstreet": RazzPokerRules.FourthStreet(this);
+		break;
+		
+		case "fifthstreet": RazzPokerRules.FifthStreet(this);
+		break;
+		
+		case "sixthstreet": RazzPokerRules.SixthStreet(this);
+		break;
+		
+		case "seventhstreet": RazzPokerRules.SeventhStreet(this);
+		break;
+		
+		case "showdown": RazzPokerRules.ShowDown(this);
+		break;
+
+		default:
+			break;
+		}
 	}
 
 }

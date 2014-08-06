@@ -9,9 +9,11 @@ public class Player {
 	public boolean isBot = false;
 	public double cash = 50.00;
 	public double bet = 0;
+	public List<String> notifications;
 	
 	public Player(){
 		hand = new ArrayList<Card>();
+		notifications = new ArrayList<String>();
 	}
 	
 	public Player(String name, int id){
